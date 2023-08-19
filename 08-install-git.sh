@@ -8,3 +8,4 @@ if [ $USEDID -ne 0 ]
 then
 echo "ERROR:: run this script in root access"
 fi
+yum install git -y
