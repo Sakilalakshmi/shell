@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Our goal is install git
+# Our goal is install mysql
 
 USERID=$(id -u)
 
@@ -9,4 +9,4 @@ then
 echo "ERROR:: run this script in root access"
 exit 5
 fi
-yum install git -y
+yum install mysql -y
