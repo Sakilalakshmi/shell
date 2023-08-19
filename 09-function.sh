@@ -12,6 +12,7 @@ LOGFILE=/tmp/$SCRIPT_NAME-$DATE
 
 VALIDATE(){
     #$1-it will receive the fitst argument
+    
     if [ $1 -ne 0 ]
 then
 echo "$2 ... $R FAILURE $N"
