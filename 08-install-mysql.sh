@@ -10,3 +10,13 @@ echo "ERROR:: run this script in root access"
 exit 5
 fi
 yum install mysql -y
+
+# Our responsibility to check the installation success or not
+
+if [ $? -ne 0 ]
+then
+echo "Installation of mysql is failure"
+exit 1
+else
+echo "Installation of mysql is success" 
+fi
