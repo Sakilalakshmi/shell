@@ -6,19 +6,19 @@ DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE
  
- R=\e[31m
- G=\e[32m
- N=\e[0m
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 VALIDATE(){
     #$1-it will receive the fitst argument
     
     if [ $1 -ne 0 ]
 then
-echo-e "$2 ... $R FAILURE $N"
+echo -e "$2 ... $R FAILURE $N"
 exit 1
 else
-echo-e "$2 ... $G SUCCESS $N" 
+echo -e "$2 ... $G SUCCESS $N" 
 fi
 }
 
