@@ -23,7 +23,7 @@ fi
 
 yum install postfix -y
 
-f [ $? -ne 0 ]
+if [ $? -ne 0 ]
 then
 echo "Installation of postfix is failure"
 exit 1
