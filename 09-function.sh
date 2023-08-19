@@ -24,15 +24,15 @@ then
 echo "ERROR:: run this script in root access"
 exit 5
 fi
-yum install mysql -y
+yum install mysql -y &>>$LOGFILE
 
 # Our responsibility to check the installation success or not
 
-VALIDATE $? "Installing MYSQL" &>>$LOGFILE
+VALIDATE $? "Installing MYSQL" 
 
-yum install postfix -y
+yum install postfix -y &>>$LOGFILE
 
-VALIDATE $? "Installing postfix" &>>$LOGFILE
+VALIDATE $? "Installing postfix" 
 
 
 
