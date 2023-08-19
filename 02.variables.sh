@@ -2,4 +2,4 @@
 
 DATE=$(date)
 
-echo "This scrip run at the timestamp: $DATE"
+echo "This script run at the timestamp: $DATE"
