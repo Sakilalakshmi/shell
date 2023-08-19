@@ -2,7 +2,9 @@
 
 # Our goal is install mysql
 
-USERID=$(id -u)
+DATE=$(date +%F)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE
 
 VALIDATE(){
     #$1-it will receive the fitst argument
@@ -15,6 +17,8 @@ echo "$2 ... SUCCESS "
 fi
 }
 
+USERID=$(id -u)
+
 if [ $USERID -ne 0 ]
 then
 echo "ERROR:: run this script in root access"
@@ -24,11 +28,11 @@ yum install mysql -y
 
 # Our responsibility to check the installation success or not
 
-VALIDATE $? "Installing MYSQL"
+VALIDATE $? "Installing MYSQL" &>>$LOGFILE
 
 yum install postfix -y
 
-VALIDATE $? "Installing postfix"
+VALIDATE $? "Installing postfix" &>>$LOGFILE
 
 
 
