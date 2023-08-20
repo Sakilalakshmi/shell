@@ -2,14 +2,14 @@
 
 
 APP_LOG_DIR=/home/centos/app-log
-DATE=$(date +%F)
+DATE=$(date +%F:%H:%M:%S)
 LOGSDIR=/home/centos/shellscript-logs
 SCRIPT_NAME=$0
 LOGFILE=$LOGSDIR/$SCRIPT_NAME-$DATE.logs
 
 FILES_TO_DELETE=$(find $APP_LOG_DIR -name "*.log" -type f -mtime +14)
 
-echo "$FILES_TO_DELETE"
+echo "script start executing at $DATE" &>>LOGFILE
 
 while read line
 do 
