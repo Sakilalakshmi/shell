@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 APP_LOG_DIR=/home/centos/app-log
 DATE=$(date +%F)
 LOGSDIR=/home/centos/shellscript-logs
