@@ -16,6 +16,15 @@ DISK_USAGE_THRESHOLD=1
 # IFS= means internal field seperator is space.
 while IFS= read line
 do 
-echo "OUTPUT: $line"
-
+#this command will give the usage in number format
+usage=$(echo $line | awk '{print $6}' | cut -d % -f1)
+#this will give a partition
+partition=$(echo $line | awk '{print $1}')
+#now you need to check whether it more than threshold or not
+if [ $usage -gt $DISK_USAGE_THRESHOLD ]
+then
+ message+="HIGH DISK USAGE ON $partition: $usage"
+fi
 done <<< $DISK_USAGE
+
+echo "message: $message"
